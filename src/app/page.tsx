@@ -1,103 +1,135 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useTheme } from "next-themes";
+
+export default function Page() {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="flex flex-col items-center">
+      {/* Hero Section */}
+      <section className="w-full text-center py-20 bg-primary text-white">
+        <h1 className="text-5xl font-bold mb-4">
+          Organize Your Work, Simplify Your Life
+        </h1>
+        <p className="text-lg mb-6">
+          A smarter way to manage tasks, boost productivity, and stay on track.
+        </p>
+        <button className="bg-secondary text-white px-6 py-3 rounded-xl">
+          Get Started Free
+        </button>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Problem Section */}
+      <section className="w-full max-w-5xl py-16 px-6">
+        <h2 className="text-3xl font-bold mb-6 text-primary">The Problem</h2>
+        <p className="text-muted-dark">
+          Too many tasks, missed deadlines, and constant stress from
+          disorganization. Without the right tools, productivity takes a hit.
+        </p>
+      </section>
+
+      {/* Solution Section */}
+      <section className="w-full max-w-5xl py-16 px-6 bg-muted rounded-2xl">
+        <h2 className="text-3xl font-bold mb-6 text-primary">Our Solution</h2>
+        <p>
+          TaskFlow brings clarity to your workflow — organize tasks, collaborate
+          with teammates, and hit your goals with ease.
+        </p>
+      </section>
+
+      {/* Features Section */}
+      <section className="w-full max-w-5xl py-16 px-6">
+        <h2 className="text-3xl font-bold mb-6 text-primary">Features</h2>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <li className="p-4 border rounded-xl">✔ Task Organization</li>
+          <li className="p-4 border rounded-xl">✔ Prioritization</li>
+          <li className="p-4 border rounded-xl">✔ Team Collaboration</li>
+          <li className="p-4 border rounded-xl">✔ Integrations</li>
+          <li className="p-4 border rounded-xl">✔ Customization</li>
+        </ul>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="w-full max-w-5xl py-16 px-6 bg-accent text-white rounded-2xl">
+        <h2 className="text-3xl font-bold mb-6">Benefits</h2>
+        <ul className="space-y-3">
+          <li>🚀 Boost your productivity</li>
+          <li>😌 Reduce stress</li>
+          <li>🤝 Improve collaboration</li>
+          <li>📂 Stay organized effortlessly</li>
+        </ul>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="w-full max-w-5xl py-16 px-6">
+        <h2 className="text-3xl font-bold mb-6 text-primary">
+          What Our Users Say
+        </h2>
+        <blockquote className="border-l-4 pl-4 italic text-muted-dark">
+          “TaskFlow changed the way my team works. Deadlines are no longer a
+          nightmare.” – Sarah L.
+        </blockquote>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="w-full max-w-5xl py-16 px-6 bg-muted rounded-2xl">
+        <h2 className="text-3xl font-bold mb-6 text-primary">Pricing</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 border rounded-xl text-center">
+            <h3 className="font-bold text-lg">Free</h3>
+            <p className="mt-2">Basic features, forever free</p>
+            <button className="mt-4 bg-primary text-white">Start Free</button>
+          </div>
+          <div className="p-6 border rounded-xl text-center">
+            <h3 className="font-bold text-lg">Pro</h3>
+            <p className="mt-2">$9/mo – Advanced tools</p>
+            <button className="mt-4 bg-secondary text-white">Get Pro</button>
+          </div>
+          <div className="p-6 border rounded-xl text-center">
+            <h3 className="font-bold text-lg">Enterprise</h3>
+            <p className="mt-2">Custom solutions for teams</p>
+            <button className="mt-4 bg-accent text-white">Contact Us</button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* FAQ Section */}
+      <section className="w-full max-w-5xl py-16 px-6">
+        <h2 className="text-3xl font-bold mb-6 text-primary">FAQ</h2>
+        <details className="mb-4">
+          <summary className="cursor-pointer font-semibold">
+            Is there a free plan?
+          </summary>
+          <p className="mt-2">Yes, we offer a forever free plan.</p>
+        </details>
+        <details>
+          <summary className="cursor-pointer font-semibold">
+            Can I cancel anytime?
+          </summary>
+          <p className="mt-2">Absolutely, you can cancel at any time.</p>
+        </details>
+      </section>
+
+      {/* CTA Section */}
+      <section className="w-full text-center py-16 bg-primary text-white">
+        <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
+        <button className="bg-secondary text-white px-6 py-3 rounded-xl">
+          Start Free Trial
+        </button>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="w-full py-10 text-center text-sm text-muted-dark">
+        <p>© 2025 TaskFlow. All rights reserved.</p>
+        <p className="mt-2">Terms · Privacy · Contact</p>
+        <button
+          className="mt-4 underline"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          Toggle {theme === "dark" ? "Light" : "Dark"} Mode
+        </button>
       </footer>
-    </div>
+    </main>
   );
 }
